@@ -115,7 +115,6 @@ int main()
         printfTree(Tree);
         printf("\n");
     }
-    printf("Hello world!\n");
-    printf("Hello world!\n");
+    printf("Hello worlddsfasdfs!\n");
     return 0;
 }
