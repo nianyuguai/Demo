@@ -48,8 +48,8 @@ NodeTree* findMin(NodeTree* Tree)
 
 NodeTree* deleteTree(NodeTree* Tree,int element)
 {
-    //É¾³ı½ÚµãÓĞ¼¸ÖÖÇé¿ö£º×óÓÒ×Ó½Úµã¶¼´æÔÚ£»
-    //Ö»ÓĞ×ó½Úµã£»Ö»ÓĞÓÒ½Úµã£»²»´æÔÚ×óÓÒ½Úµã£»ÕÒ²»µ½ÔªËØ
+    //åˆ é™¤èŠ‚ç‚¹æœ‰å‡ ç§æƒ…å†µï¼šå·¦å³å­èŠ‚ç‚¹éƒ½å­˜åœ¨ï¼›
+    //åªæœ‰å·¦èŠ‚ç‚¹ï¼›åªæœ‰å³èŠ‚ç‚¹ï¼›ä¸å­˜åœ¨å·¦å³èŠ‚ç‚¹ï¼›æ‰¾ä¸åˆ°å…ƒç´ 
     NodeTree *tmpTree;
 
     if(Tree == NULL)
@@ -64,22 +64,22 @@ NodeTree* deleteTree(NodeTree* Tree,int element)
     }
     else if(Tree->left && Tree->right)
     {
-        //´æÔÚ2¸ö×Ó½Úµã£¬×ó±ßµÄÖ¸Õë²»ÓÃĞŞ¸Ä
-        tmpTree = findMin(Tree->right);//ÕÒµ½ÓÒ±ß×îĞ¡µÄ½Úµã
-        Tree->data = tmpTree->data;//½«×îĞ¡µÄ½Úµã·Åµ½É¾³ıµÄ½Úµã´¦
-        Tree->right = deleteTree(Tree->right,Tree->data);//ĞŞ¸ÄÓÒ±ßµÄÖ¸Õë
+        //å­˜åœ¨2ä¸ªå­èŠ‚ç‚¹ï¼Œå·¦è¾¹çš„æŒ‡é’ˆä¸ç”¨ä¿®æ”¹
+        tmpTree = findMin(Tree->right);//æ‰¾åˆ°å³è¾¹æœ€å°çš„èŠ‚ç‚¹
+        Tree->data = tmpTree->data;//å°†æœ€å°çš„èŠ‚ç‚¹æ”¾åˆ°åˆ é™¤çš„èŠ‚ç‚¹å¤„
+        Tree->right = deleteTree(Tree->right,Tree->data);//ä¿®æ”¹å³è¾¹çš„æŒ‡é’ˆ
     }else
     {
-        //½«ÒªÉ¾³ıµÄ½Úµã±£´æ
+        //å°†è¦åˆ é™¤çš„èŠ‚ç‚¹ä¿å­˜
         tmpTree = Tree;
         if(Tree->left == NULL)
         {
-            Tree = Tree->right;  //Ö¸Õë²»ÓÃĞŞ¸Ä£¬Ö±½Ó½«ÓÒ±ß½ÚµãÌæ»»É¾³ı½Úµã
+            Tree = Tree->right;  //æŒ‡é’ˆä¸ç”¨ä¿®æ”¹ï¼Œç›´æ¥å°†å³è¾¹èŠ‚ç‚¹æ›¿æ¢åˆ é™¤èŠ‚ç‚¹
         }else if(Tree->right == NULL)
         {
             Tree = Tree->left;
         }
-        free(tmpTree);//ÊÍ·ÅÉ¾³ı½ÚµãÕ¼ÓÃµÄ¿Õ¼ä
+        free(tmpTree);//é‡Šæ”¾åˆ é™¤èŠ‚ç‚¹å ç”¨çš„ç©ºé—´
     }
     return Tree;
 }
@@ -116,5 +116,6 @@ int main()
         printf("\n");
     }
     printf("Hello world!\n");
+    printf("hahahah!\n");
     return 0;
 }
