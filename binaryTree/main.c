@@ -116,5 +116,6 @@ int main()
         printf("\n");
     }
     printf("Hello worlddsfasdfs!\n");
+    printf("master!\n");
     return 0;
 }
