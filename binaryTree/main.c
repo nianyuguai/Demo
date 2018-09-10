@@ -116,6 +116,6 @@ int main()
         printf("\n");
     }
     printf("Hello world!\n");
-    printf("hahahah!\n");
+    printf("dev!\n");
     return 0;
 }
